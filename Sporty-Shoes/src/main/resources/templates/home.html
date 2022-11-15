@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<style>
+input[type=text], select {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=submit] {
+        padding: 5px 15px;
+        background: #99e0b2;
+        border: 0 none;
+        cursor: pointer;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+      }
+
+input[type=password], select {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.button {
+  border: none;
+  color: green;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+p {
+  background-image: url('shoes.jpg');
+}
+.header {
+  padding: 60px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
+}
+h2 {
+  display: block;
+  background: #1abc9c;
+  color: white; 
+}
+</style>
+<head>
+<meta charset="ISO-8859-1">
+<title>Sporty Shoes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</head>
+<br><br>
+<div class="header"> Welcome to Sporty Shoes</div>
+<div align="center">
+
+	<h2>Customer Login</h2>
+    <form th:action="@{/verifyCustLogin}" method="POST">
+			<div>
+			<input name="email" type="text" placeholder="Email" class="form-control mb-4 col-4" required/>
+			<input name="password" type="password" placeholder="Password"class="form-control mb-4 col-4" required/>
+			<input type="submit" value="Log in" />
+		</form><br>
+		<h2>Admin Login</h2>
+	<form action="#" th:action="@{/verifyLogin}" method="POST">
+			<input name="username" type="text" placeholder="Username" class="form-control mb-4 col-4" required/><br>
+			<input name="password" type="password" placeholder="Password"class="form-control mb-4 col-4" required/><br>
+			<button class="btn btn-info col-2" type="submit">Log In</button>
+		</form>
+		
+	<div class="container text-center">
+        <h3><a th:href="@{/registration}">Register new user</a></h3>
+    </div>
+		
+</div>
+
+</body>
+</html>

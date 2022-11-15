@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Purchase form</title>
+</head>
+<body>
+<div class="container text-center">
+        <div>
+            <h1 align="center">Purchase Form</h1>
+        </div>
+        <div align="center">
+        <form th:action="@{/purchase_success}" method="post">
+
+			<label for="product">Choose a product:</label> 
+			<select id="product" name="product">
+				<option value="Adidas">Adidas</option>
+				<option value="Puma">Puma</option>
+				<option value="Nike">Nike</option>
+				<option value="Adidas">Adidas</option>
+				<option value="Calvin Klein">Calvin Klein</option>
+			</select><br><br>
+			
+			<label for="category">Choose a category:</label> 
+			<select id="category" name="category">
+				<option value="Sneakers">Sneakers</option>
+				<option value="Hightop">Hightop</option>
+				<option value="Formal">Formal</option>
+				<option value="Hightop">Hightop</option>
+				<option value="Formal">Formal</option>
+			</select><br><br> 
+			
+			<label for="size">Choose Size:</label> 
+			<select id="size" name="size">
+				<option value="8">8</option>
+				<option value="10">10</option>
+				<option value="8">9</option>
+				<option value="10">10</option>
+				<option value="9">9</option>
+			</select><br><br>
+			<input type="submit">
+		</form>
+		</div>   
+    </div>
+    <body>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Shopping Page</title>
+<style>
+h3{
+display:inline;
+float:center;
+}
+h3{
+display:inline;
+float:center;
+}
+div {
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px;
+}
+#table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#table td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#table tr:nth-child(even){background-color: #f2f2f2;}
+
+#table tr:hover {background-color: #ddd;}
+
+#table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+</head>
+<body>
+<form action="purchase_success" method="post">
+	<div align="center">
+		<h1>Products List</h1>
+		<br>
+		<table id="table">
+			<thead>
+				<tr>
+					<th>Product id</th>
+					<th>Product Name</th>
+					<th>Category</th>
+					<th>Price</th>
+					<th>Status</th>
+					<th>Size</th>
+					<th>Purchase</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="product : ${listProduct}">
+					<td th:text="${product.id}">Product id</td>
+					<td th:text="${product.productName}">Product Name</td>
+					<td th:text="${product.category}">Category</td>
+					<td th:text="${product.price}">Price</td>
+					<td th:text="${product.status}">Status</td>
+					<td th:text="${product.size}">Size</td>
+					<td><a th:href="@{/purchase}">Purchase</a></td>
+				</tr>
+			</tbody>
+		</table>	
+		</div>
+		</form>
+</body>
+</html>

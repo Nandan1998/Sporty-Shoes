@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<style>
+h3{
+display:inline;
+float:center;
+}
+h3{
+display:inline;
+float:center;
+}
+div {
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px;
+}
+#table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#table td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#table tr:nth-child(even){background-color: #f2f2f2;}
+
+#table tr:hover {background-color: #ddd;}
+
+#table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin Dashboard</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Products List</h1>
+		<br>
+		<form th:action="@{/AdminLogin}">
+		<input type="text" name="keyword">
+		<input type="submit" value="Search by any category">
+		</form>
+		<br>
+		<table id="table">
+			<thead>
+				<tr>
+					<th>Product id</th>
+					<th>Product Name</th>
+					<th>Category</th>
+					<th>Price</th>
+					<th>Status</th>
+					<th>Size</th>
+					<th>Delete this product</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="product : ${listProduct}">
+					<td th:text="${product.id}">Product id</td>
+					<td th:text="${product.productName}">Product Name</td>
+					<td th:text="${product.category}">Category</td>
+					<td th:text="${product.price}">Price</td>
+					<td th:text="${product.status}">Status</td>
+					<td th:text="${product.size}">Size</td>
+					<td><a th:href="@{/delete/{id}(id=${product.id})}">Delete</a></td>
+				</tr>
+			</tbody>
+		</table>	
+		<br><br>
+		<h3>
+			<b><a href="/newproduct">Add New Product</a></b>
+		</h3>
+		<br><br>
+		<h3>
+			<b><a href="/users">View list of registered users</a></b>
+		</h3>
+		<br><br>
+		<h3>
+			<b><a href="/manage_purchase">View purchase history</a></b>
+		</h3>
+		<br><br>
+		<h3>
+			<b><a href="/changePassword">Change password</a></b>
+		</h3>
+	</div>
+</body>
+</html>
